@@ -1,0 +1,2376 @@
+[
+    {
+        "id": "14d1cc2.0077534",
+        "type": "tab",
+        "label": "Data Generation",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a164b37.1228b5",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1fff4c30.2a73e4",
+        "type": "MSSQL-CN",
+        "z": "",
+        "tdsVersion": "7_4",
+        "name": "Database Connection",
+        "server": "ltimosaicthings.database.windows.net",
+        "port": "1433",
+        "encyption": true,
+        "database": "MarketplaceStage",
+        "useUTC": true,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false
+    },
+    {
+        "id": "1928e892.f4b7e7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7077c482.cffecc",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Dashboard - Refrigerated Trucks",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6509daa4.5b7194",
+        "type": "ui_group",
+        "z": "",
+        "name": "Trucks Count",
+        "tab": "7077c482.cffecc",
+        "order": 1,
+        "disp": false,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "42ce112c.e86be",
+        "type": "ui_group",
+        "z": "",
+        "name": "Truck Location",
+        "tab": "7077c482.cffecc",
+        "order": 1,
+        "disp": false,
+        "width": 18,
+        "collapse": false
+    },
+    {
+        "id": "8199e330.a73a2",
+        "type": "ui_group",
+        "z": "",
+        "name": "Alerts",
+        "tab": "7077c482.cffecc",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d9378a13.f0e118",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6509daa4.5b7194",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2d8ed16.bae9d2e",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6509daa4.5b7194",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c0128638.3b06f8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6509daa4.5b7194",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a0adeac5.2f1378",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6509daa4.5b7194",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bf740a1c.b1ccd8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Truck List",
+        "tab": "cbf07115.c57cc",
+        "order": 1,
+        "disp": true,
+        "width": 24,
+        "collapse": false
+    },
+    {
+        "id": "cbf07115.c57cc",
+        "type": "ui_tab",
+        "z": "",
+        "name": "All Trucks",
+        "icon": "view_list",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c52bac3.66eba5",
+        "type": "ui_group",
+        "z": "",
+        "name": "Truck Details",
+        "tab": "7deed7a8.fe47b8",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "7deed7a8.fe47b8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Truck View",
+        "icon": "local_shipping",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c0a2152f.4985a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current Status",
+        "tab": "7deed7a8.fe47b8",
+        "order": 3,
+        "disp": true,
+        "width": 12,
+        "collapse": false
+    },
+    {
+        "id": "5bd1376.a170cc8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Live Location",
+        "tab": "7deed7a8.fe47b8",
+        "order": 2,
+        "disp": true,
+        "width": 12,
+        "collapse": false
+    },
+    {
+        "id": "af13c632.c872b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Journey Details",
+        "tab": "7deed7a8.fe47b8",
+        "order": 4,
+        "disp": true,
+        "width": 12,
+        "collapse": false
+    },
+    {
+        "id": "28db9c63.8260c4",
+        "type": "MSSQL-CN",
+        "z": "",
+        "tdsVersion": "7_4",
+        "name": "MarketplaceStage",
+        "server": "ltimosaicthings.database.windows.net",
+        "port": "1433",
+        "encyption": true,
+        "database": "MarketplaceStage",
+        "useUTC": false,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false
+    },
+    {
+        "id": "c52014ba.c6d498",
+        "type": "MSSQL-CN",
+        "z": "",
+        "tdsVersion": "7_4",
+        "name": "MarketplaceStage",
+        "server": "ltimosaicthings.database.windows.net",
+        "port": "1433",
+        "encyption": true,
+        "database": "MarketplaceStage",
+        "useUTC": false,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false
+    },
+    {
+        "id": "3144a324.c969fc",
+        "type": "ui_group",
+        "z": "",
+        "name": "Telemetry Data",
+        "tab": "7deed7a8.fe47b8",
+        "order": 5,
+        "disp": true,
+        "width": 24,
+        "collapse": false
+    },
+    {
+        "id": "d6d4ce73.3db8d",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52bac3.66eba5",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e3015e4.f53d6a",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52bac3.66eba5",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a616fcfe.3e7f3",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52bac3.66eba5",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7d03d7aa.cdd138",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c52bac3.66eba5",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4004ad36.e3d334",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c0a2152f.4985a8",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "ac41b322.e16ca",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c0a2152f.4985a8",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "1d3725e3.c764ca",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c0a2152f.4985a8",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "305daf03.26654",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c0a2152f.4985a8",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "c6d1c3ac.6263e",
+        "type": "http request",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "https://raw.githubusercontent.com/ShreyGargLTI/docs/master/bandra-powai.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "e5569fa.1a8246"
+            ]
+        ]
+    },
+    {
+        "id": "e5569fa.1a8246",
+        "type": "csv",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "40eb47e1.126848"
+            ]
+        ]
+    },
+    {
+        "id": "40eb47e1.126848",
+        "type": "delay",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 610,
+        "y": 120,
+        "wires": [
+            [
+                "1c5263d0.76b88c"
+            ]
+        ]
+    },
+    {
+        "id": "1c5263d0.76b88c",
+        "type": "function",
+        "z": "14d1cc2.0077534",
+        "name": "Data Format",
+        "func": "var truckId = 10010;\nvar lat = msg.payload.Latitude;\nvar lon = msg.payload.Longitude;\n\n//range [-5,20]\nvar temperature = -5 + Math.round(20*Math.random());\n\n//range [30,50]\nvar humidity = 30 + Math.round(20*Math.random());\n\n//range [30,99]\nvar fuel = 30 + Math.round(69*Math.random());\nvar timestamp = new Date().toISOString();\n\nmsg.payload = {\n    timestamp : timestamp,\n    truckId : truckId,\n    fuel : fuel,\n    temperature : temperature,\n    humidity : humidity,\n    lat : lat,\n    lon : lon,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 810,
+        "y": 120,
+        "wires": [
+            [
+                "5b81f96d.c56b68"
+            ]
+        ]
+    },
+    {
+        "id": "5b81f96d.c56b68",
+        "type": "json",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 990,
+        "y": 120,
+        "wires": [
+            [
+                "3633337b.93b9bc"
+            ]
+        ]
+    },
+    {
+        "id": "3633337b.93b9bc",
+        "type": "azureiothub",
+        "z": "14d1cc2.0077534",
+        "name": "Azure IoT Hub",
+        "protocol": "amqp",
+        "x": 1150,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5bdb5d0.cd1a38",
+        "type": "inject",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 80,
+        "y": 120,
+        "wires": [
+            [
+                "c6d1c3ac.6263e"
+            ]
+        ]
+    },
+    {
+        "id": "87376c2b.b0543",
+        "type": "comment",
+        "z": "14d1cc2.0077534",
+        "name": "Create data and send to IoT Hub",
+        "info": "",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c0f74964.bbb848",
+        "type": "comment",
+        "z": "14d1cc2.0077534",
+        "name": "Create Database Table",
+        "info": "",
+        "x": 340,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e83871d7.fb49e",
+        "type": "MSSQL",
+        "z": "14d1cc2.0077534",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 480,
+        "y": 360,
+        "wires": [
+            [
+                "1921a726.4f99e9"
+            ]
+        ]
+    },
+    {
+        "id": "1921a726.4f99e9",
+        "type": "debug",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2d2ab5d3.cd306a",
+        "type": "inject",
+        "z": "14d1cc2.0077534",
+        "name": "Trucks Table",
+        "topic": "",
+        "payload": "create table trucks5 (     truckId int primary key,     licensePlate nvarchar(10),     onduty int,     driverName nvarchar(50),     mobileNumber nvarchar(15),     reportTo nvarchar(20),     connectivityType nvarchar(15),     createdAt datetimeoffset(7) )",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 280,
+        "wires": [
+            [
+                "e83871d7.fb49e"
+            ]
+        ]
+    },
+    {
+        "id": "298de2ec.df814e",
+        "type": "inject",
+        "z": "14d1cc2.0077534",
+        "name": "Jobs Table",
+        "topic": "",
+        "payload": "create table jobs (     jobId int,     truckId int,     startLat decimal(7,5),     startLon decimal(7,5),     destinationLat decimal(7,5),     destinationLon decimal(7,5),     distanceToCover int,     expectedArrivalTime datetimeoffset(7),     status nvarchar(10),     startDate datetimeoffset(7),     completedAt datetimeoffset(7),     FOREIGN KEY (truckId) REFERENCES trucks(truckId) )",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 340,
+        "wires": [
+            [
+                "e83871d7.fb49e"
+            ]
+        ]
+    },
+    {
+        "id": "c56c024.7d6df",
+        "type": "inject",
+        "z": "14d1cc2.0077534",
+        "name": "Telemetry Table",
+        "topic": "",
+        "payload": "create table telemetryData (     timestamp datetimeoffset(7),     truckId int,     fuel int,     temperature int,     humidity int,     lat decimal(7,5),     lon decimal(7,5),     FOREIGN KEY (truckId) REFERENCES trucks(truckId) );",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "e83871d7.fb49e"
+            ]
+        ]
+    },
+    {
+        "id": "f44e05a3.361cf8",
+        "type": "inject",
+        "z": "14d1cc2.0077534",
+        "name": "Alerts Table",
+        "topic": "",
+        "payload": "create table alerts (truckId int, type nvarchar(10), issue nvarchar(50), timestamp datetimeoffset(7), foreign key (truckId) references trucks1(truckId))",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "e83871d7.fb49e"
+            ]
+        ]
+    },
+    {
+        "id": "313efbc3.e60274",
+        "type": "comment",
+        "z": "14d1cc2.0077534",
+        "name": "Save data of IoT Hub to database",
+        "info": "",
+        "x": 370,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7013e090.bc4c7",
+        "type": "azure-event-hub-receive",
+        "z": "14d1cc2.0077534",
+        "name": "event Hub",
+        "connectionstring": "Endpoint=sb://ihsuprodpnres017dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=YVbc939eqEGc8n5WXcosDruVkHvbZMsd721HEUFW1Cg=;EntityPath=iothub-ehub-iot-hub-us-3339804-aa866de4a1",
+        "consumergroup": "$default",
+        "x": 70,
+        "y": 620,
+        "wires": [
+            [
+                "2dc62d7c.9f8202"
+            ]
+        ]
+    },
+    {
+        "id": "2dc62d7c.9f8202",
+        "type": "function",
+        "z": "14d1cc2.0077534",
+        "name": "insert query",
+        "func": "var data = msg.payload;\n\nvar query = `insert into telemetryData (timestamp,truckId,fuel,temperature,humidity,lat,lon)\nvalues ('${data.timestamp}',${data.truckId},${data.fuel},${data.temperature},${data.humidity},${data.lat},${data.lon});`;\n\nmsg.payload = query;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 620,
+        "wires": [
+            [
+                "f68dec6e.bbd86"
+            ]
+        ]
+    },
+    {
+        "id": "f68dec6e.bbd86",
+        "type": "MSSQL",
+        "z": "14d1cc2.0077534",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 440,
+        "y": 620,
+        "wires": [
+            [
+                "eaea9911.717ac8"
+            ]
+        ]
+    },
+    {
+        "id": "eaea9911.717ac8",
+        "type": "debug",
+        "z": "14d1cc2.0077534",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 630,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "1ef67e0d.483e72",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "select count(*) as count from trucks;",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "3c7338d8.fceb98"
+            ]
+        ]
+    },
+    {
+        "id": "3c7338d8.fceb98",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "6509daa4.5b7194",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "All Trucks",
+        "format": "{{msg.payload[0].count}}",
+        "layout": "col-center",
+        "x": 780,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "89b869a1.81cae8",
+        "type": "inject",
+        "z": "a164b37.1228b5",
+        "d": true,
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "1ef67e0d.483e72",
+                "6753058b.2fe6fc",
+                "87447f2.52f788",
+                "e411ea19.ce2238"
+            ]
+        ]
+    },
+    {
+        "id": "85e40382.d6127",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "6509daa4.5b7194",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Online",
+        "format": "{{msg.payload.online}}",
+        "layout": "col-center",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ca8a80aa.81b72",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "6509daa4.5b7194",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Offline",
+        "format": "{{msg.payload.offline}}",
+        "layout": "col-center",
+        "x": 770,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5ab5042c.5c8bfc",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "6509daa4.5b7194",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "On Duty",
+        "format": "{{msg.payload[0].onduty}}",
+        "layout": "col-center",
+        "x": 780,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "aa6c8e74.fc196",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "6509daa4.5b7194",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Issues",
+        "format": "{{msg.payload.length}}",
+        "layout": "col-center",
+        "x": 770,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "87447f2.52f788",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "select count(truckId) as onduty from jobs where status = 'active' ",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "5ab5042c.5c8bfc"
+            ]
+        ]
+    },
+    {
+        "id": "6753058b.2fe6fc",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "select t.truckId, maxd.ts, td.fuel, td.temperature, td.humidity, td.lat, td.lon from trucks as t left join (select truckId, MAX(timestamp) as ts from telemetryData group by truckId) as maxd on t.truckId=maxd.truckId left join telemetryData td on t.truckId = td.truckId where maxd.ts = td.timestamp",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "8f9b81c1.ea4ce",
+                "f2454c8d.cc1f6",
+                "e92d2e61.50c3"
+            ]
+        ]
+    },
+    {
+        "id": "8f9b81c1.ea4ce",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "online/offline condition",
+        "func": "var online=0;\nvar offline =0;\n\nvar trucks = msg.payload;\nfor(var i=0; i < trucks.length; ++i ){\n    var acceptedTime = new Date().getTime()-60000;\n    if(trucks[i].ts > acceptedTime){\n        online++;\n    }\n    else{\n        offline++;\n    }\n}\n\nmsg.payload={\nonline,\noffline\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "85e40382.d6127",
+                "ca8a80aa.81b72"
+            ]
+        ]
+    },
+    {
+        "id": "e411ea19.ce2238",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "select truckId,type, timestamp, issue from alerts where timestamp > DateAdd(DD,-1,GETDATE()) order by timestamp desc",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 360,
+        "y": 340,
+        "wires": [
+            [
+                "aa6c8e74.fc196"
+            ]
+        ]
+    },
+    {
+        "id": "f67f6915.278158",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "Pull Count data for all trucks",
+        "info": "",
+        "x": 380,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8df7e075.d5a87",
+        "type": "ui_worldmap",
+        "z": "a164b37.1228b5",
+        "group": "42ce112c.e86be",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "19.0760",
+        "lon": "72.8777",
+        "zoom": "10",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/worldmap",
+        "urlPodPath": "/560ae90b-68e3-4321-8ba9-4b46e79fcfc0",
+        "x": 780,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f2454c8d.cc1f6",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "last location",
+        "func": "var trucks= msg.payload;\n\nmsg.payload= trucks.map(truck=>{\n    return{\n    name:truck.truckId,\n    timestamp: truck.ts,\n    lat: truck.lat,\n    lon: truck.lon,\n    fuel: truck.fuel,\n    temperature: truck.temperature,\n    humidity: truck.humidity,\n    icon : ':truck:',\n    label : truck.truckId.toString()\n    }\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 400,
+        "wires": [
+            [
+                "8df7e075.d5a87"
+            ]
+        ]
+    },
+    {
+        "id": "a61ef0f0.50b7e",
+        "type": "ui_list",
+        "z": "a164b37.1228b5",
+        "group": "8199e330.a73a2",
+        "name": "Alerts",
+        "order": 1,
+        "width": 6,
+        "height": 9,
+        "lineType": "three",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 770,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e92d2e61.50c3",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "alerts",
+        "func": "var issues=msg.payload;\n\nvar alerts = []\n\nfor (var i =0 ; i<issues.length;i++){\n    \n    alerts.push({\n        \"title\": `<font color=\\\"red\\\"><b>${issues[i].issue}</b></b>`,\n        \"description\": `Truck having issue is ${issues[i].truckId}`,\n        \"icon_name\": \"error\",\n        \"truckid\": issues[i].truckId\n    })\n}\nconsole.log(alerts);\nmsg.payload=alerts;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 460,
+        "wires": [
+            [
+                "a61ef0f0.50b7e"
+            ]
+        ]
+    },
+    {
+        "id": "d5e21c1d.2b39d",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "Print all trucks in table format",
+        "info": "",
+        "x": 380,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8909c7fb.920338",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "select",
+        "query": "select * from trucks;",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 410,
+        "y": 620,
+        "wires": [
+            [
+                "eb067354.14c35"
+            ]
+        ]
+    },
+    {
+        "id": "eb067354.14c35",
+        "type": "ui_table",
+        "z": "a164b37.1228b5",
+        "group": "bf740a1c.b1ccd8",
+        "name": "Truck List",
+        "order": 1,
+        "width": 24,
+        "height": 11,
+        "columns": [
+            {
+                "field": "truckId",
+                "title": "Truck ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "licensePlate",
+                "title": "License Plate",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "reportTo",
+                "title": "Reports to",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "connectivityType",
+                "title": "Connectivity Type",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "onduty",
+                "title": "On Duty",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "a6f83d05.48534",
+                "ad31c39c.7c14a"
+            ]
+        ]
+    },
+    {
+        "id": "4ee647d.65521b8",
+        "type": "inject",
+        "z": "a164b37.1228b5",
+        "d": true,
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 620,
+        "wires": [
+            [
+                "8909c7fb.920338"
+            ]
+        ]
+    },
+    {
+        "id": "8b8721f4.eb619",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c52bac3.66eba5",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "name": "IoT Device ID",
+        "label": "Truck ID",
+        "format": "{{msg.payload.truckId}}",
+        "layout": "col-center",
+        "x": 620,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "82eb14e9.824828",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "Truck View",
+        "info": "",
+        "x": 600,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "62fdc1f.81ab44",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c52bac3.66eba5",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "License Plate",
+        "label": "License Plate",
+        "format": "{{msg.payload.licensePlate}}",
+        "layout": "col-center",
+        "x": 620,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "9dbf2033.59962",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c52bac3.66eba5",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "name": "Connectivity Status",
+        "label": "Reports To",
+        "format": "{{msg.payload.reportTo}}",
+        "layout": "col-center",
+        "x": 630,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "881e6227.95896",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c52bac3.66eba5",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Onduty",
+        "format": "{{msg.payload.onduty}}",
+        "layout": "col-center",
+        "x": 600,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "c278434.01721c",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c52bac3.66eba5",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Connectivity",
+        "format": "{{msg.payload.connectivityType}}",
+        "layout": "col-center",
+        "x": 610,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "23988950.1ec1f6",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 900,
+        "wires": [
+            [
+                "8b8721f4.eb619",
+                "62fdc1f.81ab44",
+                "9dbf2033.59962",
+                "881e6227.95896",
+                "c278434.01721c"
+            ]
+        ]
+    },
+    {
+        "id": "78da5bc4.047374",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "S3 - Truck View",
+        "info": "",
+        "x": 340,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "875ef900.b94e48",
+        "type": "ui_ui_control",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "events": "all",
+        "x": 960,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6f83d05.48534",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "UI-Control",
+        "func": "global.set('truckId',msg.payload.truckId)\nmsg.payload = {\n    tab : \"Truck View\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 620,
+        "wires": [
+            [
+                "875ef900.b94e48"
+            ]
+        ]
+    },
+    {
+        "id": "8b10f623.6aace8",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Live status query",
+        "func": "var truckId= global.get('truckId') || 10001;\nmsg.payload=`select t.truckId, t.connectivityType,t.driverName,t.mobileNumber,t.reportTo, maxd.ts, td.fuel, td.temperature, td.humidity, td.lat, td.lon from trucks \nas t left join (select truckId, MAX(timestamp) as ts from telemetryData group by truckId) \nas maxd on t.truckId=maxd.truckId left join telemetryData td on t.truckId = td.truckId \nwhere maxd.ts = td.timestamp and t.truckId = ${truckId}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 1200,
+        "wires": [
+            [
+                "99a2ed1b.312ca"
+            ]
+        ]
+    },
+    {
+        "id": "99a2ed1b.312ca",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 460,
+        "y": 1200,
+        "wires": [
+            [
+                "952a270f.9b4068",
+                "8eb5e30a.cc57b",
+                "4f2ea5c4.0df11c",
+                "385bd9ec.f48b96",
+                "8ae56703.3bf518"
+            ]
+        ]
+    },
+    {
+        "id": "952a270f.9b4068",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "Fuel",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].fuel",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 1100,
+        "wires": [
+            [
+                "9eb24724.d66458"
+            ]
+        ]
+    },
+    {
+        "id": "9eb24724.d66458",
+        "type": "ui_gauge",
+        "z": "a164b37.1228b5",
+        "name": "Fuel Level",
+        "group": "c0a2152f.4985a8",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "gtype": "wave",
+        "title": "Fuel",
+        "label": "Litres",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 830,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "8eb5e30a.cc57b",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 1140,
+        "wires": [
+            [
+                "20359e61.442f32"
+            ]
+        ]
+    },
+    {
+        "id": "20359e61.442f32",
+        "type": "ui_gauge",
+        "z": "a164b37.1228b5",
+        "name": "Current Temperature",
+        "group": "c0a2152f.4985a8",
+        "order": 2,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "degree celcius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "5",
+        "seg2": "10",
+        "x": 860,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "4f2ea5c4.0df11c",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "Humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 1180,
+        "wires": [
+            [
+                "44a8aa58.22a424"
+            ]
+        ]
+    },
+    {
+        "id": "44a8aa58.22a424",
+        "type": "ui_gauge",
+        "z": "a164b37.1228b5",
+        "name": "Current Humidity",
+        "group": "c0a2152f.4985a8",
+        "order": 3,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "percentage",
+        "format": "{{value}} %",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "x": 850,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "8ae56703.3bf518",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "Truck Location",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "payload.driverName",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.icon",
+                "pt": "msg",
+                "to": ":truck:",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.label",
+                "pt": "msg",
+                "to": "payload.driverName",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1260,
+        "wires": [
+            [
+                "3b8d798b.3a9026"
+            ]
+        ]
+    },
+    {
+        "id": "385bd9ec.f48b96",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "Last Message At",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].ts",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1220,
+        "wires": [
+            [
+                "7ec06d99.7e53d4"
+            ]
+        ]
+    },
+    {
+        "id": "7ec06d99.7e53d4",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "c0a2152f.4985a8",
+        "order": 5,
+        "width": 8,
+        "height": 2,
+        "name": "Last Message",
+        "label": "Last Message at",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 840,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "3b8d798b.3a9026",
+        "type": "ui_worldmap",
+        "z": "a164b37.1228b5",
+        "group": "5bd1376.a170cc8",
+        "order": 1,
+        "width": 12,
+        "height": 8,
+        "name": "",
+        "lat": "19.0760",
+        "lon": "72.8777",
+        "zoom": "10",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/truckmap",
+        "urlPodPath": "/560ae90b-68e3-4321-8ba9-4b46e79fcfc0",
+        "x": 820,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "a512f2eb.68a91",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "af13c632.c872b8",
+        "order": 2,
+        "width": 6,
+        "height": 2,
+        "name": "Destination",
+        "label": "Going to",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1030,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "e334217c.ef17b",
+        "type": "ui_text",
+        "z": "a164b37.1228b5",
+        "group": "af13c632.c872b8",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "Start Point",
+        "label": "Started From",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1030,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "7457a065.6e4a1",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "Journey Details",
+        "info": "",
+        "x": 580,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "c889a6c0.0c4e68",
+        "type": "http request",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 530,
+        "y": 1460,
+        "wires": [
+            [
+                "935749b8.f0e238"
+            ]
+        ]
+    },
+    {
+        "id": "3afb310d.0fd7de",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "query",
+        "func": "var truckId =  global.get('truckId') || 10001;\nvar query = `select truckId,jobId,startLat,startLon,destinationLat,destinationLon from jobs where truckId = '${truckId}' and status = 'active'`;\nmsg.payload = query;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 230,
+        "y": 1380,
+        "wires": [
+            [
+                "eade2c31.6ea73"
+            ]
+        ]
+    },
+    {
+        "id": "eade2c31.6ea73",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 360,
+        "y": 1380,
+        "wires": [
+            [
+                "de2dd547.2b24e8"
+            ]
+        ]
+    },
+    {
+        "id": "a5cb5eec.368c9",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Start Address",
+        "func": "var job = msg.payload[0];\n\nvar url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${job.startLon},${job.startLat}.json?access_token=pk.eyJ1IjoicmFuZG9tdmFsdWU3ODYiLCJhIjoiY2theTk5bHk1MDdkNTJ4bWl6ZmE2MWZhMyJ9.YGQTSRmZEg0ARqzc3uqadw`\n\nmsg.url = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 1460,
+        "wires": [
+            [
+                "c889a6c0.0c4e68"
+            ]
+        ]
+    },
+    {
+        "id": "935749b8.f0e238",
+        "type": "json",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 1460,
+        "wires": [
+            [
+                "1f285c54.497874"
+            ]
+        ]
+    },
+    {
+        "id": "1f285c54.497874",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.features[0].place_name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 1460,
+        "wires": [
+            [
+                "e334217c.ef17b"
+            ]
+        ]
+    },
+    {
+        "id": "84ffe011.7c67a",
+        "type": "http request",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 530,
+        "y": 1500,
+        "wires": [
+            [
+                "9e92f90a.8a1ee8"
+            ]
+        ]
+    },
+    {
+        "id": "9f794c09.be01b",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Destination Address",
+        "func": "var job = msg.payload[0];\n\nvar url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${job.destinationLon},${job.destinationLat}.json?access_token=pk.eyJ1IjoicmFuZG9tdmFsdWU3ODYiLCJhIjoiY2theTk5bHk1MDdkNTJ4bWl6ZmE2MWZhMyJ9.YGQTSRmZEg0ARqzc3uqadw`\n\nmsg.url = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 1500,
+        "wires": [
+            [
+                "84ffe011.7c67a"
+            ]
+        ]
+    },
+    {
+        "id": "9e92f90a.8a1ee8",
+        "type": "json",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 1500,
+        "wires": [
+            [
+                "e33bbbc5.bce068"
+            ]
+        ]
+    },
+    {
+        "id": "e33bbbc5.bce068",
+        "type": "change",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.features[0].place_name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 1500,
+        "wires": [
+            [
+                "a512f2eb.68a91"
+            ]
+        ]
+    },
+    {
+        "id": "de2dd547.2b24e8",
+        "type": "switch",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "property": "payload[0]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "object",
+                "vt": "object"
+            },
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 1500,
+        "wires": [
+            [
+                "a5cb5eec.368c9",
+                "9f794c09.be01b"
+            ],
+            [
+                "d022261.1ba28d8"
+            ]
+        ]
+    },
+    {
+        "id": "d022261.1ba28d8",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Undefined Msg",
+        "func": "msg.payload='Not Available'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 1540,
+        "wires": [
+            [
+                "a512f2eb.68a91",
+                "e334217c.ef17b"
+            ]
+        ]
+    },
+    {
+        "id": "7dbd2e6b.67ab2",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "query",
+        "func": "var truckId = msg.payload.truckId || global.get('truckId') || 10001;\nglobal.set('truckId', truckId);\n\nvar query = `Select top 30 truckId, timestamp,fuel,temperature,humidity from telemetryData where truckId = ${truckId} and timestamp > DATEADD(hh, -01, GETDATE()) order by timestamp DESC`;\n\nmsg.payload = query;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 1680,
+        "wires": [
+            [
+                "ba62ad7c.eed56"
+            ]
+        ]
+    },
+    {
+        "id": "ba62ad7c.eed56",
+        "type": "MSSQL",
+        "z": "a164b37.1228b5",
+        "mssqlCN": "1fff4c30.2a73e4",
+        "name": "",
+        "query": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "x": 400,
+        "y": 1680,
+        "wires": [
+            [
+                "680a5c5.ddbd6a4"
+            ]
+        ]
+    },
+    {
+        "id": "8e50e893.8fbf98",
+        "type": "ui_chart",
+        "z": "a164b37.1228b5",
+        "name": "Temperature",
+        "group": "3144a324.c969fc",
+        "order": 2,
+        "width": 12,
+        "height": 4,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No Data",
+        "dot": false,
+        "ymin": "-5",
+        "ymax": "40",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0f5a3c9.bf029",
+        "type": "ui_chart",
+        "z": "a164b37.1228b5",
+        "name": "Humidity",
+        "group": "3144a324.c969fc",
+        "order": 1,
+        "width": 12,
+        "height": 4,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No Data",
+        "dot": false,
+        "ymin": "0%",
+        "ymax": "100%",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3bdeb1a.5d6058",
+        "type": "comment",
+        "z": "a164b37.1228b5",
+        "name": "Telemetry",
+        "info": "",
+        "x": 620,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "e0a017c7.f01ce8",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Temp formatting",
+        "func": "var temp = msg.payload.temperature;\nvar time = msg.payload.timestamp;\n\n\n\nmsg.payload ={\n    x : time,\n    y : temp\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 1820,
+        "wires": [
+            [
+                "ab407a0e.c8edb8"
+            ]
+        ]
+    },
+    {
+        "id": "4cda2d00.42b8f4",
+        "type": "split",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 210,
+        "y": 1840,
+        "wires": [
+            [
+                "e0a017c7.f01ce8",
+                "d95ac67e.4aa158"
+            ]
+        ]
+    },
+    {
+        "id": "ab407a0e.c8edb8",
+        "type": "join",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 610,
+        "y": 1820,
+        "wires": [
+            [
+                "4d0b3155.d51d5"
+            ]
+        ]
+    },
+    {
+        "id": "4d0b3155.d51d5",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "format",
+        "func": "msg.payload = [{\n    \"series\" : [\"Temperature\"],\n    \"data\" : [msg.payload]\n}]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1820,
+        "wires": [
+            [
+                "8e50e893.8fbf98"
+            ]
+        ]
+    },
+    {
+        "id": "d95ac67e.4aa158",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "Humidity formatting",
+        "func": "var temp = msg.payload.humidity;\nvar time = msg.payload.timestamp;\n\n\n\nmsg.payload ={\n    x : time,\n    y : temp\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 1860,
+        "wires": [
+            [
+                "f01082c8.926f7"
+            ]
+        ]
+    },
+    {
+        "id": "f01082c8.926f7",
+        "type": "join",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 610,
+        "y": 1860,
+        "wires": [
+            [
+                "14e24a7c.3b5256"
+            ]
+        ]
+    },
+    {
+        "id": "14e24a7c.3b5256",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "format",
+        "func": "msg.payload = [{\n    \"series\" : [\"Humidity\"],\n    \"data\" : [msg.payload]\n}]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1860,
+        "wires": [
+            [
+                "d0f5a3c9.bf029"
+            ]
+        ]
+    },
+    {
+        "id": "680a5c5.ddbd6a4",
+        "type": "switch",
+        "z": "a164b37.1228b5",
+        "name": "",
+        "property": "payload[0]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            },
+            {
+                "t": "istype",
+                "v": "object",
+                "vt": "object"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 1780,
+        "wires": [
+            [
+                "4ab494b2.622fdc"
+            ],
+            [
+                "4cda2d00.42b8f4"
+            ]
+        ]
+    },
+    {
+        "id": "4ab494b2.622fdc",
+        "type": "function",
+        "z": "a164b37.1228b5",
+        "name": "format",
+        "func": "msg.payload = []\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 1780,
+        "wires": [
+            [
+                "8e50e893.8fbf98",
+                "d0f5a3c9.bf029"
+            ]
+        ]
+    },
+    {
+        "id": "be78914.67f287",
+        "type": "inject",
+        "z": "a164b37.1228b5",
+        "name": "Refresh Data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "3293bf2a.72019"
+            ]
+        ]
+    },
+    {
+        "id": "3293bf2a.72019",
+        "type": "link out",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "9bcd5b8f.f57248",
+            "b7b257d1.eac4c8",
+            "ec6cbe4e.65133",
+            "d9af4948.19eed8",
+            "4c785c39.252a64"
+        ],
+        "x": 315,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "9bcd5b8f.f57248",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "3293bf2a.72019"
+        ],
+        "x": 175,
+        "y": 220,
+        "wires": [
+            [
+                "1ef67e0d.483e72",
+                "6753058b.2fe6fc",
+                "87447f2.52f788",
+                "e411ea19.ce2238"
+            ]
+        ]
+    },
+    {
+        "id": "b7b257d1.eac4c8",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "3293bf2a.72019"
+        ],
+        "x": 275,
+        "y": 660,
+        "wires": [
+            [
+                "8909c7fb.920338"
+            ]
+        ]
+    },
+    {
+        "id": "efbd8589.232fe8",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Table",
+        "links": [
+            "ad31c39c.7c14a"
+        ],
+        "x": 220,
+        "y": 900,
+        "wires": [
+            [
+                "23988950.1ec1f6"
+            ]
+        ]
+    },
+    {
+        "id": "ad31c39c.7c14a",
+        "type": "link out",
+        "z": "a164b37.1228b5",
+        "name": "Table",
+        "links": [
+            "efbd8589.232fe8",
+            "e7aaae64.130d2"
+        ],
+        "x": 695,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ec6cbe4e.65133",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "3293bf2a.72019"
+        ],
+        "x": 95,
+        "y": 1200,
+        "wires": [
+            [
+                "8b10f623.6aace8"
+            ]
+        ]
+    },
+    {
+        "id": "d9af4948.19eed8",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "3293bf2a.72019"
+        ],
+        "x": 95,
+        "y": 1380,
+        "wires": [
+            [
+                "3afb310d.0fd7de"
+            ]
+        ]
+    },
+    {
+        "id": "4c785c39.252a64",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Refresh",
+        "links": [
+            "3293bf2a.72019"
+        ],
+        "x": 75,
+        "y": 1680,
+        "wires": [
+            [
+                "7dbd2e6b.67ab2"
+            ]
+        ]
+    },
+    {
+        "id": "e7aaae64.130d2",
+        "type": "link in",
+        "z": "a164b37.1228b5",
+        "name": "Table",
+        "links": [
+            "ad31c39c.7c14a"
+        ],
+        "x": 75,
+        "y": 1620,
+        "wires": [
+            [
+                "7dbd2e6b.67ab2"
+            ]
+        ]
+    }
+]

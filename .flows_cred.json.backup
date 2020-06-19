@@ -1,0 +1,10 @@
+{
+    "c6d1c3ac.6263e": {},
+    "3633337b.93b9bc": {
+        "connectionstring": "HostName=IoT-Hub-usecase.azure-devices.net;DeviceId=truckDevice;SharedAccessKey=a9GIz3e1A6UehubYCcxv3ofZqtICdgPgUFfBdCFqnjI="
+    },
+    "1fff4c30.2a73e4": {
+        "username": "admin",
+        "password": "rootroot"
+    }
+}
